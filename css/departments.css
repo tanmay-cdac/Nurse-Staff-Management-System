@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary: #2196f3;
+  --accent: #ff1493;
+  --text-dark: #212121;
+  --text-light: #ffffff;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: url("../images/hospital-bg.png") no-repeat center center/cover;
+  overflow: hidden;
+  color: var(--text-light);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 15px 40px;
+
+  height: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.project-name {
+  color: var(--text-light);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  border-bottom: 3px solid #ff1493;
+}
+
+.departments-section {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 20px 60px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.departments-section h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 85%;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  padding: 8px 15px;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.add-btn:hover {
+  background-color: #ff69b4;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid var(--text-light);
+}
+
+th {
+  background-color: transparent;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+td {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modify-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.modify-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+

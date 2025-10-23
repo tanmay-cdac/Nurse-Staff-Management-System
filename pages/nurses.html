@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursing Staff Management System</title>
+  <link rel="stylesheet" href="../css/nurses.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo" />
+        <h1 class="project-name">Nursing Staff Management System</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="wards.html">Wards</a></li>
+        <li><a href="nurses.html" class="active">Nurses</a></li>
+        <li><a href="patients.html">Patients</a></li>
+        <li><a href="assignments.html">Shifts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="nurses-section">
+      <h2>Nurses</h2>
+      <div class="add-btn-container">
+        <button class="add-btn" id="add-nurse-btn">Add Nurse</button>
+      </div>
+
+      <div class="table-container">
+        <table id="nurses-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/nurses.js"></script>
+</body>
+</html>
