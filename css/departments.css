@@ -18,20 +18,21 @@ body {
   height: 100vh;
   margin: 0;
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--text-light);
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
   padding: 15px 40px;
-
   height: 70px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -56,6 +57,7 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -68,7 +70,7 @@ body {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  border-bottom: 3px solid #ff1493;
+  border-bottom: 3px solid var(--accent);
 }
 
 .departments-section {
@@ -115,23 +117,26 @@ body {
 }
 
 .table-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 90%;
+  overflow-x: auto;
+  display: block;
 }
 
 table {
   border-collapse: collapse;
-  width: 85%;
+  width: 100%;
+  max-width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
 
+
 th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid var(--text-light);
+  white-space: nowrap;
 }
 
 th {
@@ -174,3 +179,99 @@ td {
   background-color: #e53935;
 }
 
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .project-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .departments-section h2 {
+    font-size: 30px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .departments-section {
+    padding: 40px 15px;
+  }
+
+  .departments-section h2 {
+    font-size: 26px;
+  }
+
+  .add-btn-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  table {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .departments-section h2 {
+    font-size: 22px;
+  }
+
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+}

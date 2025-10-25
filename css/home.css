@@ -14,18 +14,11 @@
   --text-light: #ffffff;
 }
 
-.logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 body {
   height: 100vh;
   margin: 0;
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--text-light);
 }
 
@@ -35,10 +28,10 @@ body {
   align-items: center;
   background-color: transparent;
   padding: 15px 40px;
-
   height: 70px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -50,6 +43,8 @@ body {
 .logo {
   width: 45px;
   height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .project-name {
@@ -91,7 +86,6 @@ body {
   z-index: 1;
 }
 
-
 .overlay {
   position: absolute;
   top: 0;
@@ -118,4 +112,83 @@ body {
   font-size: 20px;
   color: #f5f5f5;
   line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .project-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .hero {
+    padding: 25% 15px 0;
+  }
+
+  .hero-content h2 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .hero-content h2 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
 }
