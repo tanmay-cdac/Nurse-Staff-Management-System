@@ -20,6 +20,12 @@ body {
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
   overflow-x: hidden;
   color: var(--text-light);
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
 }
 
 /* Navbar */
