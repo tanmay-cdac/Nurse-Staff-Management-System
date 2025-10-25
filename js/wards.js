@@ -4,12 +4,6 @@ const addWardBtn = document.querySelector("#add-ward-btn");
 let wards = JSON.parse(localStorage.getItem("wards")) || [];
 let departments = JSON.parse(localStorage.getItem("departments")) || [];
 
-if (departments.length === 0) {
-  addWardBtn.disabled = true;
-  addWardBtn.textContent = "Add Department First";
-  addWardBtn.style.backgroundColor = "#999";
-}
-
 function selectDepartment(defaultDept = "") {
   const deptOptions = departments.map(d => d.name);
   let selection = null;

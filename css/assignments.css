@@ -17,6 +17,7 @@ body {
   height: 100vh;
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
   color: var(--text-light);
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -25,6 +26,7 @@ body {
   align-items: center;
   padding: 15px 40px;
   height: 70px;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -37,6 +39,7 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .project-name {
@@ -48,6 +51,7 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -55,6 +59,7 @@ body {
   color: var(--text-light);
   font-weight: 500;
   padding-bottom: 5px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a:hover,
@@ -63,7 +68,10 @@ body {
 }
 
 .assignments-section {
-  padding: 50px 20px;
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 70px);
+  padding: 50px 20px 60px;
   text-align: center;
 }
 
@@ -71,6 +79,7 @@ body {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .add-btn-container {
@@ -79,7 +88,6 @@ body {
   width: 85%;
   margin: 0 auto 15px auto;
 }
-
 
 .add-btn {
   padding: 8px 15px;
@@ -100,11 +108,13 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
 }
 
 table {
   border-collapse: collapse;
-  width: 85%;
+  width: 100%;
+  min-width: 600px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
@@ -114,6 +124,8 @@ th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid var(--text-light);
+  word-break: break-word;
+  white-space: nowrap;
 }
 
 th {
@@ -134,6 +146,7 @@ td {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .modify-btn {
@@ -152,4 +165,101 @@ td {
 
 .delete-btn:hover {
   background-color: #e53935;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .project-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .assignments-section h2 {
+    font-size: 30px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .assignments-section {
+    padding: 40px 15px;
+  }
+
+  .assignments-section h2 {
+    font-size: 26px;
+  }
+
+  .add-btn-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  table {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .assignments-section h2 {
+    font-size: 22px;
+  }
+
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
 }

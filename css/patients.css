@@ -18,7 +18,7 @@ body {
   height: 100vh;
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
   color: var(--text-light);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -28,6 +28,7 @@ body {
   padding: 15px 40px;
   height: 70px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -40,6 +41,7 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .project-name {
@@ -51,6 +53,7 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -58,7 +61,7 @@ body {
   color: var(--text-light);
   font-weight: 500;
   padding-bottom: 5px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a:hover,
@@ -74,13 +77,15 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 50px 20px 60px;
+  text-align: center;
 }
 
 .patients-section h2 {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 20px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  color: var(--text-light);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .add-btn-container {
@@ -98,24 +103,25 @@ body {
   font-weight: 600;
   cursor: pointer;
   color: #000;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .add-btn:hover {
   background-color: #ff69b4;
 }
 
-/* Table */
 .table-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
 }
 
 table {
   border-collapse: collapse;
-  width: 85%;
-  background-color: rgba(255,255,255,0.1);
+  width: 100%;
+  min-width: 600px;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -124,6 +130,8 @@ th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid var(--text-light);
+  word-break: break-word;
+  white-space: nowrap;
 }
 
 th {
@@ -144,11 +152,120 @@ td {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.modify-btn { background-color: #4caf50; color: #fff; }
-.modify-btn:hover { background-color: #45a049; }
+.modify-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
 
-.delete-btn { background-color: #f44336; color: #fff; }
-.delete-btn:hover { background-color: #e53935; }
+.modify-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .project-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .patients-section h2 {
+    font-size: 30px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .patients-section {
+    padding: 40px 15px;
+  }
+
+  .patients-section h2 {
+    font-size: 26px;
+  }
+
+  .add-btn-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  table {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .patients-section h2 {
+    font-size: 22px;
+  }
+
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+}

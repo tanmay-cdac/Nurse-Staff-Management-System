@@ -16,9 +16,8 @@
 
 body {
   height: 100vh;
-  margin: 0;
   background: url("../images/hospital-bg.png") no-repeat center center/cover;
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--text-light);
 }
 
@@ -31,6 +30,7 @@ body {
   height: 70px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -43,6 +43,7 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .project-name {
@@ -55,6 +56,7 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -67,7 +69,7 @@ body {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  border-bottom: 3px solid #ff1493;
+  border-bottom: 3px solid var(--accent);
 }
 
 .nurses-section {
@@ -91,15 +93,40 @@ body {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
+.add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 85%;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  padding: 8px 15px;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.add-btn:hover {
+  background-color: #ff69b4;
+}
+
 .table-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
 }
 
 table {
   border-collapse: collapse;
-  width: 85%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 600px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
@@ -109,6 +136,8 @@ th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid var(--text-light);
+  word-break: break-word;
+  white-space: nowrap;
 }
 
 th {
@@ -151,24 +180,99 @@ td {
   background-color: #e53935;
 }
 
-.add-btn-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 85%;
-  margin-bottom: 15px;
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .project-name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nurses-section h2 {
+    font-size: 30px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
 }
 
-.add-btn {
-  padding: 8px 15px;
-  background-color: var(--accent);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  color: #000;
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .nurses-section {
+    padding: 40px 15px;
+  }
+
+  .nurses-section h2 {
+    font-size: 26px;
+  }
+
+  .add-btn-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  table {
+    width: 95%;
+  }
 }
 
-.add-btn:hover {
-  background-color: #ff69b4;
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .nurses-section h2 {
+    font-size: 22px;
+  }
+
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
 }
