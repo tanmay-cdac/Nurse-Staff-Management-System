@@ -117,7 +117,7 @@ body {
 }
 
 .table-container {
-  width: 85%;
+  width: 100%;
   overflow-x: auto;
   display: block;
 }
